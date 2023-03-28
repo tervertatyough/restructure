@@ -1,17 +1,39 @@
 import logo from "../assets/ubrandealerslogo.png";
 
-function Login({ email, setEmail, password, setPassword, login, error }) {
+function Register({
+  firstname,
+  setFirstName,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  register,
+  error,
+}) {
   return (
     <div className="mx-auto my-auto flex min-h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
         <img className="mx-auto h-16 w-auto" src={logo} alt="Urban Dealers" />
         {/* <h3>{user?.email}</h3> */}
         <h2 className="mt-6 text-center text-lg font-bold tracking-tight text-gray-900">
-          Sign in to your account
+          Create a new account
         </h2>
         {/* <form onSubmit={handleAction} className="space-y-6"> */}
         <input type="hidden" name="remember" value="true" />
         <div className="-space-y-px rounded-md shadow-sm">
+          <div>
+            <label className="sr-only">First name</label>
+            <input
+              type="text"
+              value={firstname}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+              required
+              className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              placeholder="First Name"
+            />
+          </div>
           <div>
             <label className="sr-only">Email address</label>
             <input
@@ -58,7 +80,7 @@ function Login({ email, setEmail, password, setPassword, login, error }) {
               href="wwww.codecamp.ng"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              Forgot your password?
+              Already have an account? Login
             </a>
           </div>
         </div>
@@ -66,7 +88,7 @@ function Login({ email, setEmail, password, setPassword, login, error }) {
         <div>
           <button
             type="submit"
-            onClick={login}
+            onClick={register}
             className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -84,7 +106,7 @@ function Login({ email, setEmail, password, setPassword, login, error }) {
                 />
               </svg>
             </span>
-            Sign in
+            Register
           </button>
           {error && <p>{error.message}</p>}
         </div>
@@ -94,4 +116,4 @@ function Login({ email, setEmail, password, setPassword, login, error }) {
   );
 }
 
-export default Login;
+export default Register;
