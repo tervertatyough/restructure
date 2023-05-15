@@ -1,5 +1,6 @@
 {
   "name": "restructure",
+  "homepage": "http://www.urbandealers.ng",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { doc, getDoc, documentId, where } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 export default function Dashboard({ logout }) {
   const navigate = useNavigate();

@@ -10,8 +10,10 @@ import { useState } from "react";
 
 import Login from "./components/Login";
 import Home from "./components/home";
+import About from "./components/about";
 import Dashboard from "./components/dashboard";
 import Register from "./components/register";
+import Contact from "./components/contact";
 
 function App() {
   const [firstName, setFirstName] = useState("");
@@ -55,6 +57,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/login"
           element={
